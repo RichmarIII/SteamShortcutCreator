@@ -15,6 +15,7 @@
 # License: MIT License (https://opensource.org/licenses/MIT)
 
 # import the necessary modules
+import getpass
 import platform
 import requests
 import os
@@ -175,7 +176,7 @@ def process_game(game, session):
                 game_controller_support = get_controller_support_for_game(game, app_details)
 
                 #print the game name and controller support status to the console (for debugging)
-                print(game_name + ": Controller Support: " + str(game_controller_support))
+                print(game_name + ": Controller Support: " + str(game_controller_support) + "\n" )
 
                 #check if the game has full controller support and create a shortcut for it if it does (partial controller support is not supported)
                 if game_controller_support == "full":
@@ -206,7 +207,12 @@ def main():
     web_api = WebAPI(key=steam_api_key)
 
     #authenticate the user via cli
-    user = WebAuth()
+    
+    #ask for username and password
+    username = input("Username: ")
+    password = getpass.getpass("Password: ")
+
+    user = WebAuth(username=username, password=password)
     session = user.cli_login()
 
     #steam id of the user
@@ -222,10 +228,19 @@ def main():
         process_game(game, session)
 
         #print progress to the console
-        print(str(response["response"]["games"].index(game) + 1) + "/" + str(len(response["response"]["games"])))
+        print("Progress: " + str(response["response"]["games"].index(game) + 1) + "/" + str(len(response["response"]["games"])))
 
-        #estimate time remaining
-        print("Estimated Time Remaining: " + str((len(response["response"]["games"]) - response["response"]["games"].index(game)) * 1.6) + " seconds")
+        #estimate time remaining (seconds)
+        seconds_remaining = (len(response["response"]["games"]) - response["response"]["games"].index(game)) * 1.6
+
+        #convert seconds to hours, minutes, and seconds
+        hours = seconds_remaining // 3600
+        seconds_remaining %= 3600
+        minutes = seconds_remaining // 60
+        seconds = seconds_remaining % 60
+
+        #print estimated time remaining to the console in format (xxh:xxm:xxs)
+        print("Estimated Time Remaining: " + str(int(hours)) + "h:" + str(int(minutes)) + "m:" + str(int(seconds)) + "s\n")
 
 #run the main function of the program
 main()
