@@ -1,4 +1,3 @@
-
 # Steam Shortcut Creator For Controller-Based Games
 
 ## Introduction
@@ -30,6 +29,44 @@ Place the obtained Steam Web API Key in a text file named "steam_api_key.txt" in
 4. The program will scan your Steam library, identify games that offer full controller support, and create shortcuts for them in the designated location.
 
 Note: The program must be run from the same directory as the "steam_api_key.txt" file.
+
+# Installing The Generated Steam Game Shortcuts in EmulationStation
+
+The following are instructions on how to install game shortcuts for Steam in EmulationStation.
+
+`~` *is the installation folder of EmulationStation*
+
+## Windows
+
+1. Minimize the Steam application before launching games from EmulationStation, to prevent Steam from stealing focus.
+2. Copy the ` .url` Steam game shortcuts into the  `~/ROMs/steam `directory. These files have the `.url` extension and can be launched directly from within EmulationStation.
+3. The final result should look something like this:
+
+   ```python
+   ~/ROMs/steam/Axiom Verge.url
+   ~/ROMs/steam/Undertale.url
+   ```
+
+## Unix/Linux
+
+1. Copy the `.desktop` Steam game shortcuts into the `~/ROMs/steam` directory. These files have the `.desktop` extension and can be launched directly from within EmulationStation
+2. The final result should look something like this:
+
+   ```python
+   ~/ROMs/steam/Axiom Verge.desktop
+   ~/ROMs/steam/Undertale.desktop
+   ```
+
+## macOS
+
+1. Make sure that the Steam application is minimized when launching games from EmulationStation, to prevent Steam from stealing focus.
+2. Copy the `.app` Steam game shortcuts into the `~/ROMs/steam` directory. These files have the `.app` extension and can be launched directly from within EmulationStation
+3. The final result should look something like this:
+
+   ```python
+   ~/ROMs/steam/Axiom Verge.app
+   ~/ROMs/steam/Undertale.app
+   ```
 
 ## Author
 
