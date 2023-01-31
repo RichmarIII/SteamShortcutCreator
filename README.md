@@ -42,7 +42,7 @@ The following are instructions on how to install game shortcuts for Steam in Emu
 2. Copy the ` .url` Steam game shortcuts into the  `~/ROMs/steam `directory. These files have the `.url` extension and can be launched directly from within EmulationStation.
 3. The final result should look something like this:
 
-   ```python
+   ```
    ~/ROMs/steam/Axiom Verge.url
    ~/ROMs/steam/Undertale.url
    ```
@@ -52,7 +52,7 @@ The following are instructions on how to install game shortcuts for Steam in Emu
 1. Copy the `.desktop` Steam game shortcuts into the `~/ROMs/steam` directory. These files have the `.desktop` extension and can be launched directly from within EmulationStation
 2. The final result should look something like this:
 
-   ```python
+   ```
    ~/ROMs/steam/Axiom Verge.desktop
    ~/ROMs/steam/Undertale.desktop
    ```
@@ -63,7 +63,7 @@ The following are instructions on how to install game shortcuts for Steam in Emu
 2. Copy the `.app` Steam game shortcuts into the `~/ROMs/steam` directory. These files have the `.app` extension and can be launched directly from within EmulationStation
 3. The final result should look something like this:
 
-   ```python
+   ```
    ~/ROMs/steam/Axiom Verge.app
    ~/ROMs/steam/Undertale.app
    ```
